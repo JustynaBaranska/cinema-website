@@ -79,10 +79,16 @@ nav ul li a:hover {
 }
 .big-image {
     width:90%;
-    height:500px;
+    /*height:500px;*/
     margin-left:auto;
     margin-right:auto;
 }
+
+.big-image li img
+{
+	max-width: 1200px
+}
+
 .second-half {
     color:white;
     width:90%;

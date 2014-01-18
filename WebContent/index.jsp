@@ -22,7 +22,12 @@
     </div>
     <hr />
     <section class="big-image">
-        <img src="Images/gravity.jpg"  />
+    <ul id="movieScroller">
+    <li><img src="Images/moviepromos/gravity.jpg" /></li>
+    <li><img src="Images/moviepromos/duedate.jpg" /></li>
+    <li><img src="Images/moviepromos/superman.jpg" /></li>
+    </ul>
+        
     </section>
 
     <section class="second-half">
@@ -105,5 +110,16 @@
         <p>Cinema &copy; 2014 </p>
         &copy 2014;
     </footer>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/jquery.carouFredSel-6.2.1.js"></script>
+    <script type="text/javascript">
+    
+    (function($){
+    	
+    	$("#movieScroller").carouFredSel();
+    	
+    })(jQuery);
+    
+    </script>
 </body>
 </html>
