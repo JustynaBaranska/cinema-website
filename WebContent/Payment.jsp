@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/StyleSheet.css" />
     <title>Payment</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="naigation">
     <nav>        
         <ul>
-            <li class="first"><a href="Home.html">Home</a></li>
+            <li class="first"><a href="index.jsp">Home</a></li>
             <li class="navi bookingnav">Tickets</li>
             <li class="navi bookingnav">Details</li>
             <li class="last ">Payment</li>

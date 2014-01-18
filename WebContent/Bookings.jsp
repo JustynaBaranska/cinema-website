@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-<link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+<link rel="stylesheet" type="text/css" href="Styles/StyleSheet.css" />
     <title>Booking</title>
 </head>
 <body>
@@ -12,10 +12,10 @@
         <div class="naigation">
     <nav>        
         <ul>
-            <li class="first"><a href="Home.html">Home</a></li>
-            <li class="navi"><a href="WhatsOn.html" >What's on</a></li>
-            <li class="navi"><a href="Prices.html" >Prices</a></li>
-            <li class="last"><a href="Bookings.html" >Booking</a></li>
+            <li class="first"><a href="index.jsp">Home</a></li>
+            <li class="navi"><a href="WhatsOn.jsp" >What's on</a></li>
+            <li class="navi"><a href="Prices.jsp" >Prices</a></li>
+            <li class="last"><a href="Bookings.jsp" >Booking</a></li>
         </ul>
     </nav>
             </div>
