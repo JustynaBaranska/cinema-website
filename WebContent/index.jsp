@@ -49,8 +49,8 @@
             <p><%= openingThisWeek.GetShortDescription() %></p>
         </div>
         <div class="know">
-            <h3>Did you know</h3>
-            <% Movie didYouKnow = model.GetDidYouKnow(); %>
+            <h3>Film of the Month</h3>
+            <% Movie didYouKnow = model.GetFilmOfTheMonth(); %>
             <img src ="<%= didYouKnow.GetSmallImage() %>" />
             <h4><%= didYouKnow.GetTitle() %></h4>
             <p><%= didYouKnow.GetShortDescription() %></p>

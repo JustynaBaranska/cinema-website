@@ -8,33 +8,70 @@ import data.models.News;
 
 public class HomepageModel {
 
+	private List<Movie> _movies;
+	private List<News> _news;
+	
+	public HomepageModel(List<Movie> movies, List<News> news)
+	{
+		_movies = movies;
+		_news = news;
+	}
+	
+	
 	public List<Movie> GetScrollerMovies()
 	{
 		List<Movie> scrollers = new ArrayList<Movie>();
 		
-		scrollers.add(new Movie());
-		scrollers.add(new Movie());
+		for(Movie m : _movies)
+		{
+			if(m.GetShowPromoOnHomepage())
+			{
+				scrollers.add(m);
+			}
+		}
 		
 		return scrollers;
 	}
 	
 	public Movie GetOpeningThisWeek()
 	{
-		return new Movie();
+		Movie openingThisWeek = null;
+		
+		for(Movie m : _movies)
+		{
+			if(m.GetShowOpeningThisWeek())
+			{
+				openingThisWeek = m;
+				break;
+			}
+		}
+
+		return openingThisWeek;
 	}
 	
-	public Movie GetDidYouKnow()
+	public Movie GetFilmOfTheMonth()
 	{
-		return new Movie();
+		Movie filmOfTheMonth = null;
+		
+		for(Movie m : _movies)
+		{
+			if(m.GetShowFilmOfTheMonth())
+			{
+				filmOfTheMonth = m;
+				break;
+			}
+		}
+
+		return filmOfTheMonth;
 	}
 	public List<Movie> GetMostWatchedTrailers()
 	{
-List<Movie> trailers = new ArrayList<Movie>();
-		
-trailers.add(new Movie());
-trailers.add(new Movie());
-trailers.add(new Movie());
-trailers.add(new Movie());
+		List<Movie> trailers = new ArrayList<Movie>();
+				
+		for(Movie m : _movies)
+		{
+			trailers.add(m);	
+		}
 		
 		return trailers;
 	}
