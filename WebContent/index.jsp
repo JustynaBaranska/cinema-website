@@ -31,7 +31,7 @@
     <ul id="movieScroller">
     <% for(Movie m : model.GetScrollerMovies())
     {%>
-    	<li><img src="<%= m.GetPromoImage() %>" /></li>
+    	<li><a href="Movie.jsp?id=<%= m.GetId() %>"><img src="<%= m.GetPromoImage() %>" /></a></li>
     <%}%>
     <!-- <li><img src="Images/moviepromos/gravity.jpg" /></li>
     <li><img src="Images/moviepromos/duedate.jpg" /></li>
@@ -47,13 +47,15 @@
             <img src="<%= openingThisWeek.GetSmallImage() %>" />
             <h4><%= openingThisWeek.GetTitle() %></h4>
             <p><%= openingThisWeek.GetShortDescription() %></p>
+            <a href="Movie.jsp?id=<%= openingThisWeek.GetId() %>">Read more</a>
         </div>
         <div class="know">
             <h3>Film of the Month</h3>
-            <% Movie didYouKnow = model.GetFilmOfTheMonth(); %>
-            <img src ="<%= didYouKnow.GetSmallImage() %>" />
-            <h4><%= didYouKnow.GetTitle() %></h4>
-            <p><%= didYouKnow.GetShortDescription() %></p>
+            <% Movie fotm = model.GetFilmOfTheMonth(); %>
+            <img src ="<%= fotm.GetSmallImage() %>" />
+            <h4><%= fotm.GetTitle() %></h4>
+            <p><%= fotm.GetShortDescription() %></p>
+            <a href="Movie.jsp?id=<%= fotm.GetId() %>">Read more</a>
         </div>
         <div class="most">
             <h3>Most watched trailers</h3>
@@ -71,6 +73,7 @@
             	<div class="<%= cssClass %>">
 	                <img src="<%= m.GetThumbnailImage() %>" />
 	                <h4><%= m.GetTitle() %></h4>
+	                <a href="Movie.jsp?id=<%= m.GetId() %>">Read more</a>
             	</div>
             	<%
             	index++;
