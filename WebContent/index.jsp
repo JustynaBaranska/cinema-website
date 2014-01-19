@@ -114,8 +114,8 @@
         </div>
         <div class="random">
         <% News news = model.GetLatestNews();%>
-            <h4><%= news.GetTitle() %></h4>
-            <p><%= news.GetSummary() %></p>
+            <h4><%= news.GetNewsTitle() %></h4>
+            <p><%= news.GetNewsText() %></p>
             <a href="News.jsp?id=<%= news.GetId() %>">Read more</a>
         </div>
     </section>

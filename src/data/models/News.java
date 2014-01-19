@@ -1,16 +1,31 @@
 package data.models;
 
+import java.util.Date;
+
 public class News {
-	public String GetTitle()
+	private int _id; 
+	private String _title; 
+	private String _newsText;
+	private Date _addedDate;
+	
+	
+	public News(int id, String title, String newsText, Date addedDate)
 	{
-		return "Emmy Awards";	
+		_id = id;
+		_title = title;
+		_newsText = newsText;
+		_addedDate = addedDate;
 	}
-	public String GetSummary()
+	public String GetNewsTitle()
 	{
-		return "Emmy Awards, blah blah";	
+		return _title;	
+	}
+	public String GetNewsText()
+	{
+		return _newsText;	
 	}
 	public int GetId()
 	{
-		return 1;	
+		return _id;	
 	}
 }

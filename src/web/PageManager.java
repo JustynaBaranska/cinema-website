@@ -7,6 +7,7 @@ import config.ConfigManager;
 import data.models.Movie;
 import data.models.News;
 import services.MovieService;
+import services.NewsService;
 import web.viewmodels.HomepageModel;
 
 public class PageManager {
@@ -22,7 +23,8 @@ public class PageManager {
 		MovieService movieService = new MovieService(config.GetConnectionString("default"));
 		List<Movie> movies = movieService.GetAllMovies();
 		
-		List<News> news = new ArrayList<News>();
+		NewsService newsService = new NewsService(config.GetConnectionString("default"));
+		News news = newsService.GetLatestNews();
 		
 		return new HomepageModel(movies, news);
 	}

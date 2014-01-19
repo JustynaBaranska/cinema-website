@@ -9,9 +9,9 @@ import data.models.News;
 public class HomepageModel {
 
 	private List<Movie> _movies;
-	private List<News> _news;
+	private News _news;
 	
-	public HomepageModel(List<Movie> movies, List<News> news)
+	public HomepageModel(List<Movie> movies, News news)
 	{
 		_movies = movies;
 		_news = news;
@@ -78,7 +78,7 @@ public class HomepageModel {
 	
 	public News GetLatestNews()
 	{
-		return new News();
+		return _news;
 	}
 	
 }
