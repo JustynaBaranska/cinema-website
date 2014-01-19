@@ -1,0 +1,42 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+DROP SCHEMA IF EXISTS `cinema` ;
+CREATE SCHEMA IF NOT EXISTS `cinema` DEFAULT CHARACTER SET utf8 ;
+USE `cinema` ;
+
+-- -----------------------------------------------------
+-- Table `cinema`.`movies`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cinema`.`movies` ;
+
+CREATE TABLE IF NOT EXISTS `cinema`.`movies` (
+  `Id` INT(11) NOT NULL AUTO_INCREMENT,
+  `Title` VARCHAR(255) NULL DEFAULT NULL,
+  `ShortDescription` VARCHAR(512) NULL DEFAULT NULL,
+  `FullDescription` TEXT NULL DEFAULT NULL,
+  `PromoImage` VARCHAR(255) NULL DEFAULT NULL,
+  `SmallImage` VARCHAR(255) NULL DEFAULT NULL,
+  `ThumbnailImage` VARCHAR(255) NULL DEFAULT NULL,
+  `OpeningDate` DATETIME NULL DEFAULT NULL,
+  `ShowPromoOnHomepage` BIT(1) NULL DEFAULT NULL,
+  `ShowOpeningThisWeek` BIT(1) NULL DEFAULT NULL,
+  `ShowFilmOfTheMonth` BIT(1) NULL DEFAULT NULL,
+  `TrailerYoutubeId` VARCHAR(50) NULL DEFAULT NULL,
+  `TrailerViews` INT(11) NULL DEFAULT NULL,
+  `Is3D` BIT(1) NULL DEFAULT NULL,
+  PRIMARY KEY (`Id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `cinema`.`movies` (`Title`, `ShortDescription`, `FullDescription`, `PromoImage`, `SmallImage`, `ThumbnailImage`, `OpeningDate`, `ShowPromoOnHomepage`, `ShowOpeningThisWeek`, `ShowFilmOfTheMonth`, `TrailerYoutubeId`, `TrailerViews`, `Is3D`) VALUES ('Gravity', 'Space Film', 'Space Film Blah Blah', 'Images/moviepromos/gravity.jpg', 'Images/gravity.jpg', 'Images/trailer.jpg', '2013-12-01', 1, 0, 1, 'OiTiKOy59o4', '0', 0);
+INSERT INTO `cinema`.`movies` (`Title`, `ShortDescription`, `FullDescription`, `PromoImage`, `SmallImage`, `ThumbnailImage`, `OpeningDate`, `ShowPromoOnHomepage`, `ShowOpeningThisWeek`, `ShowFilmOfTheMonth`, `TrailerYoutubeId`, `TrailerViews`, `Is3D`) VALUES ('Gravity in 3D', 'Space Film in 3D', 'Space Film Blah Blah in 3D', 'Images/moviepromos/gravity.jpg', 'Images/gravity.jpg', 'Images/trailer.jpg', '2014-01-01', 1, 1, 0, 'OiTiKOy59o4', '0', 1);
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
