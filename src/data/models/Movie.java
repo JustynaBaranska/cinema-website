@@ -63,6 +63,11 @@ public class Movie {
 		return _shortDescription;
 	}
 	
+	public String GetFullDescription()
+	{
+		return _fullDescription;
+	}
+	
 	
 	public String GetThumbnailImage()
 	{
@@ -82,6 +87,16 @@ public class Movie {
 	public boolean GetShowFilmOfTheMonth()
 	{
 		return _showFilmOfTheMonth;
+	}
+	
+	public Date GetOpeningDate()
+	{
+		return _openingDate;
+	}
+	
+	public int GetId()
+	{
+		return _id;
 	}
 	
 	
