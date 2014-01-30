@@ -99,5 +99,10 @@ public class Movie {
 		return _id;
 	}
 	
+	public boolean GetIs3D()
+	{
+		return _is3D;
+	}
+	
 	
 }

@@ -35,6 +35,45 @@ INSERT INTO `cinema`.`movies` (`Title`, `ShortDescription`, `FullDescription`, `
 INSERT INTO `cinema`.`movies` (`Title`, `ShortDescription`, `FullDescription`, `PromoImage`, `SmallImage`, `ThumbnailImage`, `OpeningDate`, `ShowPromoOnHomepage`, `ShowOpeningThisWeek`, `ShowFilmOfTheMonth`, `TrailerYoutubeId`, `TrailerViews`, `Is3D`) VALUES ('Gravity in 3D', 'Space Film in 3D', 'Space Film Blah Blah in 3D', 'Images/moviepromos/gravity.jpg', 'Images/gravity.jpg', 'Images/trailer.jpg', '2014-01-01', 1, 1, 0, 'OiTiKOy59o4', '0', 1);
 
 
+CREATE TABLE IF NOT EXISTS `cinema`.`news` (
+  `idnews` INT(11) NOT NULL AUTO_INCREMENT,
+  `news_title` VARCHAR(255) NULL DEFAULT NULL,
+  `news_text` TEXT NULL DEFAULT NULL,
+  `date_added` DATE NULL DEFAULT NULL,
+  PRIMARY KEY (`idnews`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8;
+
+
+INSERT INTO `cinema`.`news` (`news_title`, `news_text`, `date_added`) VALUES ('Test1', 'Test News', '2014-01-24');
+INSERT INTO `cinema`.`news` (`news_title`, `news_text`, `date_added`) VALUES ('Test2', 'Test News 2', '2014-01-25');
+
+
+
+
+CREATE TABLE `cinema`.`bookings` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `movieId` INT NULL,
+  `total` VARCHAR(45) NULL,
+  `summary` VARCHAR(255) NULL,
+  `numGoing` INT NULL,
+  `datetime` DATE NULL,
+  `firstname` VARCHAR(45) NULL,
+  `surname` VARCHAR(45) NULL,
+  `email` VARCHAR(255) NULL,
+  `phonenumber` VARCHAR(45) NULL,
+  `cardType` VARCHAR(45) NULL,
+  `cardName` VARCHAR(45) NULL,
+  `cardNumber` VARCHAR(45) NULL,
+  `expiryMonth` VARCHAR(45) NULL,
+  `expiryYear` VARCHAR(45) NULL,
+  `issueNumber` VARCHAR(45) NULL,
+  `securityCode` VARCHAR(45) NULL,
+  PRIMARY KEY (`Id`));
+
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

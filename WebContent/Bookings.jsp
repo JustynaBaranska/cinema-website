@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="web.*,web.viewmodels.BookingPageModel,data.models.*"%>
+    <%
+    PageManager manager = new PageManager();
+    BookingPageModel model = manager.GetBookingPageModel();
+    %>
+    
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -24,42 +29,36 @@
     <section class="booking">
         <div class="booking-left">
             <h2>SHOWING TODAY</h2>
-            <div>
-            <div class="imagesforbooking">
-            <img src="Images/frozen.jpg" class="booking-image" />
-             <p class="booking-image">Frozen</p>
+            
+            <% for(Movie m : model.GetMovies())
+            {%>
+            	<div class="imagesforbooking">
+            <img src="<%= m.GetSmallImage() %>" class="booking-image" />
+             <p class="booking-image"><%= m.GetTitle() %></p>
             </div>
-            <div class="imagesforbooking">
-            <img src="Images/americanhustle.jpg" class="booking-image" />
-                <p class="booking-image">American Hustle</p>
-                </div>
-                </div>
-            <div>
-            <div class="imagesforbooking">
-            <img src="Images/hobbit.jpg" class="booking-image" />
-                <p class="booking-image">The Hobbit</p>
-                     </div>
-            <div class="imagesforbooking">
-            <img src="Images/deliveryman.jpg"  class="booking-image"/>
-                <p class="booking-image">Delivery Man</p>
-                     </div>
-            </div>
+            <%}%>
+            
+            
         </div>
         <div class="booking-right">
             <h2>Book Tickets</h2>
             <p class="bookinglists">Choose a film </p>
            <p class="bookinglists">
-            <select class="pickmovie">
+            <form action="Tickets.jsp">
+            <select name="movieChoice" class="pickmovie">
                 <option>Please select</option>
-                <option>Delivery Man</option>
-                <option>Frozen</option>
+                <% for(Movie m : model.GetMovies())
+            {%>
+             <option value="<%= m.GetId() %>"><%= m.GetTitle() %></option>
+            <%}%>
             </select>
                 </p>
                 <p class="bookinglists">
-                <button>time1</button>
-                <button>time2</button>
-                <button>time3</button>
+                <button name="time" value="11:00">11:00</button>
+                <button name="time" value="14:00">14:00</button>
+                <button name="time" value="18:00">18:00</button>
                     </p>
+            </form>
             <hr />
 
             <p> Call for information & phone bookings on:</p>
